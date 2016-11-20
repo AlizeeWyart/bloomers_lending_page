@@ -1,0 +1,5 @@
+<h1>All coffees and teas shop</h1>
+<ul>
+<% @places.each do |place| %>
+  <li> <p><%= place.name%> : <%= place.address%></p></li>
+<% end %></ul>

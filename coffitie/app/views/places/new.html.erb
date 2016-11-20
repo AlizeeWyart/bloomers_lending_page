@@ -1,0 +1,19 @@
+
+<div style="display: flex">
+  <div style="flex: 1 1 auto; padding: 20px">
+    <div style="margin: 40px auto;">
+    <h1>Let's create a new place</h1>
+
+      <%= simple_form_for(@place) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :website %>
+        <%= f.input :telephone %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+
+    </div>
+  </div>
+</div>

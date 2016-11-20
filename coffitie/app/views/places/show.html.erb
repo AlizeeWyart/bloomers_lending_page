@@ -1,0 +1,18 @@
+<h1><%= @place.name %></h1>
+<h2><%= @place.address %></h2>
+<p> <%= @place.telephone %> </p>
+<p> <%= @place.website %> </p>
+
+<h2>The menu of drinks</h2>
+<ul> <% @place.prices.each do |price| %>
+  <li><%= price.drink.name %> : <%= price.cost %> (<%= price.description %>)</li>
+<% end %></ul>
+
+<h3>Add a drink</h3>
+
+      <%= simple_form_for [@place, @price] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :cost %>
+        <%= f.input :drink_id, collection: @drinks %>
+        <%= f.submit "add a dose", class: "btn btn-primary" %>
+      <% end %>
